@@ -1,0 +1,7 @@
+{
+  "name": "Cybersafe",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
