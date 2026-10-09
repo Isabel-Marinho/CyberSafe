@@ -1,4 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import {
   IonButton,
@@ -15,13 +16,14 @@ import {
   IonList,
   IonTitle,
   IonToolbar,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular'; // <-- Apenas @ionic/angular
 import { Trilha } from '../../core/models/trilha.model';
 import { TrilhasService } from '../../modules/trilhas/trilhas.service';
 
 @Component({
   selector: 'app-home',
   imports: [
+    CommonModule,
     RouterLink,
     IonButton,
     IonCard,

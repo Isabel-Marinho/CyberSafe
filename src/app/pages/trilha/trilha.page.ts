@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import {
   IonBackButton,
@@ -10,13 +11,14 @@ import {
   IonList,
   IonTitle,
   IonToolbar,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 import { TrilhasService } from '../../modules/trilhas/trilhas.service';
 import { VideosService } from '../../modules/videos/videos.service';
 
 @Component({
   selector: 'app-trilha',
   imports: [
+    CommonModule,
     RouterLink,
     IonBackButton,
     IonButtons,
