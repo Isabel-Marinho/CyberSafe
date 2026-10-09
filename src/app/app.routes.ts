@@ -10,4 +10,8 @@ export const routes: Routes = [
     path: 'trilha/:id',
     loadComponent: () => import('./pages/trilha/trilha.page').then((m) => m.TrilhaPage),
   },
+  {
+    path: 'video/:id',
+    loadComponent: () => import('./pages/video/video.page').then((m) => m.VideoPage),
+  },
 ];
