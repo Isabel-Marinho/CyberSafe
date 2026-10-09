@@ -30,9 +30,14 @@ import { VideosService } from '../../modules/videos/videos.service';
   styles: [
     `
       video {
-        width: 50%;
+        width: 60%;
         border-radius: 12px;
         background: #000;
+      }
+
+      .video-container {
+        display: flex;
+        justify-content: center;
       }
     `,
   ],
@@ -48,7 +53,10 @@ import { VideosService } from '../../modules/videos/videos.service';
 
     <ion-content class="ion-padding">
       @if (video) {
-        <video controls playsinline preload="metadata" [src]="url" (ended)="concluir()"></video>
+
+        <div class="video-container">
+          <video controls playsinline preload="metadata" [src]="url" (ended)="concluir()"></video>
+        </div>
 
         <h2>{{ video.titulo }}</h2>
         <p>{{ video.descricao }}</p>
