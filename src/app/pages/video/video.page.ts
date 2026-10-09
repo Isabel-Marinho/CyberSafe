@@ -30,7 +30,7 @@ import { VideosService } from '../../modules/videos/videos.service';
   styles: [
     `
       video {
-        width: 100%;
+        width: 50%;
         border-radius: 12px;
         background: #000;
       }
