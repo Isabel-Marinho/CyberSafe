@@ -1,4 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import {
   IonBackButton,
@@ -12,7 +13,7 @@ import {
   IonProgressBar,
   IonTitle,
   IonToolbar,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 import { ProgressoService } from '../../modules/progresso/progresso.service';
 import { TrilhasService } from '../../modules/trilhas/trilhas.service';
 import { VideosService } from '../../modules/videos/videos.service';
@@ -20,6 +21,7 @@ import { VideosService } from '../../modules/videos/videos.service';
 @Component({
   selector: 'app-trilha',
   imports: [
+    CommonModule,
     RouterLink,
     IonBackButton,
     IonBadge,

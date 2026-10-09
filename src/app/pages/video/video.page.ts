@@ -10,7 +10,7 @@ import {
   IonLabel,
   IonTitle,
   IonToolbar,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 import { ProgressoService } from '../../modules/progresso/progresso.service';
 import { VideosService } from '../../modules/videos/videos.service';
 
