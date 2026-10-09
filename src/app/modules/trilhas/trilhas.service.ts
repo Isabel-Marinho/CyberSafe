@@ -1,28 +1,35 @@
 import { Injectable } from '@angular/core';
-
-export interface Trilha {
-  nome: string;
-  faixa: string;
-}
+import { Trilha, TrilhaId } from '../../core/models/trilha.model';
+import { TRILHAS } from './trilhas.data';
 
 @Injectable({ providedIn: 'root' })
 export class TrilhasService {
-  private readonly trilhas = {
-    golpesFinanceiros: { nome: 'Golpes Financeiros', faixa: '50+' },
-    segurancaDados: { nome: 'Segurança de Dados', faixa: '18-50' },
-    segurancaJogos: { nome: 'Segurança em Jogos Digitais', faixa: 'crianças e adolescentes' },
-  };
+  listar(): Trilha[] {
+    return TRILHAS;
+  }
+
+  buscarPorId(id: string): Trilha | undefined {
+    return TRILHAS.find((trilha) => trilha.id === id);
+  }
 
   trilhaPorIdade(idade: number): Trilha {
-    if (idade < 0) {
+    if (!Number.isFinite(idade) || idade < 0) {
       throw new Error('Idade inválida');
     }
     if (idade < 18) {
-      return this.trilhas.segurancaJogos;
+      return this.obter('jogos-digitais');
     }
     if (idade <= 50) {
-      return this.trilhas.segurancaDados;
+      return this.obter('seguranca-dados');
     }
-    return this.trilhas.golpesFinanceiros;
+    return this.obter('golpes-financeiros');
+  }
+
+  private obter(id: TrilhaId): Trilha {
+    const trilha = this.buscarPorId(id);
+    if (!trilha) {
+      throw new Error(`Trilha não encontrada: ${id}`);
+    }
+    return trilha;
   }
 }
