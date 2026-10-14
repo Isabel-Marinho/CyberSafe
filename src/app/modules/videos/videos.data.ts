@@ -29,7 +29,7 @@ export const VIDEOS: Video[] = [
     trilhaId: 'jogos-digitais',
     titulo: 'Protegendo seu dispositivo',
     descricao: 'Cuidados para ao baixar jogos.',
-    arquivo: 'app.mp4',
+    arquivo: 'apps.mp4',
   },
 
   // Trilha: Segurança de Dados
